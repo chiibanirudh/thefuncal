@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funny Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- The loading screen appears first, then JavaScript hides it. -->
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="loader-card">
+      <div class="math-orbit" aria-hidden="true">
+        <span>+</span>
+        <span>-</span>
+        <span>x</span>
+        <span>/</span>
+      </div>
+      <h1>Funny Calculator</h1>
+      <p id="loadingMessage">Calculating the meaning of life...</p>
+      <div class="progress-bar" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- This welcome screen gives the site a playful first moment before the calculator appears. -->
+  <section class="welcome-screen" id="welcomeScreen" aria-label="Welcome screen">
+    <div class="welcome-card">
+      <p class="creator">Created by Lord Anirudh</p>
+      <h1>The World's Most Dramatic Calculator</h1>
+      <p class="welcome-copy">Write your name so the calculator knows who to blame for the math.</p>
+
+      <form class="name-form" id="nameForm">
+        <label for="nameInput">Write your name</label>
+        <div class="name-row">
+          <input id="nameInput" name="name" type="text" autocomplete="name" placeholder="Your legendary name">
+          <button type="submit">Start</button>
+        </div>
+      </form>
+
+      <p class="name-reaction" id="nameReaction" aria-live="polite">This calculator is emotionally ready.</p>
+    </div>
+  </section>
+
+  <main class="app-shell locked" id="appShell">
+    <section class="calculator-panel" aria-label="Funny calculator">
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">Serious math, suspicious vibes</p>
+          <h1>Funny Calculator</h1>
+          <p class="byline">Created by Lord Anirudh</p>
+        </div>
+        <button class="sound-toggle active" id="soundToggle" type="button" aria-label="Toggle sounds" title="Toggle sounds">SFX</button>
+      </div>
+
+      <!-- The calculator display shows the current expression and the main value. -->
+      <div class="display" aria-live="polite">
+        <div class="expression" id="expression">Ready to overthink numbers</div>
+        <div class="screen" id="screen">0</div>
+        <div class="joke-message" id="jokeMessage">Press buttons. Question reality.</div>
+      </div>
+
+      <div class="keypad">
+        <button class="key utility" data-action="clear" type="button">AC</button>
+        <button class="key utility" data-action="delete" type="button">DEL</button>
+        <button class="key utility" data-action="decimal" type="button">.</button>
+        <button class="key operator" data-operator="/" type="button">&divide;</button>
+
+        <button class="key" data-number="7" type="button">7</button>
+        <button class="key" data-number="8" type="button">8</button>
+        <button class="key" data-number="9" type="button">9</button>
+        <button class="key operator" data-operator="*" type="button">&times;</button>
+
+        <button class="key" data-number="4" type="button">4</button>
+        <button class="key" data-number="5" type="button">5</button>
+        <button class="key" data-number="6" type="button">6</button>
+        <button class="key operator" data-operator="-" type="button">-</button>
+
+        <button class="key" data-number="1" type="button">1</button>
+        <button class="key" data-number="2" type="button">2</button>
+        <button class="key" data-number="3" type="button">3</button>
+        <button class="key operator" data-operator="+" type="button">+</button>
+
+        <button class="key zero" data-number="0" type="button">0</button>
+        <button class="key equals" data-action="calculate" type="button">=</button>
+      </div>
+    </section>
+
+    <aside class="excuse-panel" aria-label="Random excuse generator">
+      <h2>Math Excuse Generator</h2>
+      <p id="excuseText">When the answer looks wrong, blame the calculator with confidence.</p>
+      <button class="excuse-button" id="excuseButton" type="button">Generate Random Excuse</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
